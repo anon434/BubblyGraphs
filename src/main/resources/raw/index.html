@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+
+<body>
+
+<div id="shell">
+    <div id="page" class="tabContent active">
+        <div id="main">
+            <div id="interactiveShell">
+                <div class="columnGroup firstColumnGroup">
+                    <div class="ledeStory">
+                        <div id="interactiveFreeFormMain">
+
+                            <div class="bubbly">
+                                <div id="bubbly-chartFrame">
+                                    <div id="bubbly-chart">
+                                        <div class="bubbly-navBar">
+                                            <div id="bubbly-search" style="display:none;"></div>
+                                            <ul class="bubbly-navigation clearfix">
+                                                <li id="bubbly-nav-all">All Spending</li>
+                                                <li id="bubbly-nav-mandatory">Types of Spending</li>
+                                                <li id="bubbly-nav-discretionary">Changes</li>
+                                                <li id="bubbly-nav-deparment">Department Totals</li>
+                                            </ul>
+                                        </div>
+                                        <div id="bubbly-tooltip">
+                                            <div id="bubbly-tooltipContainer">
+                                                <div class="bubbly-department"></div>
+                                                <div class="bubbly-rule"></div>
+                                                <div class="bubbly-name"></div>
+                                                <div class="bubbly-discretion"></div>
+                                                <div class="bubbly-valuesContainer">
+                                                    <span class="bubbly-value"></span>
+                                                    <span class="bubbly-change"></span>
+                                                </div>
+                                                <div class="bubbly-chart"></div>
+                                                <div class="bubbly-tail"></div>
+                                            </div>
+                                        </div>
+                                        <div id="bubbly-overlays">
+                                            <div class="bubbly-overlay" id="bubbly-totalOverlay">
+                                                <div class="bubbly-overview">
+                                                    <h5>How $3.7 Trillion Is Spent</h5>
+                                                    <p>Mr. Obama&apos;s budget proposal includes $3.7 trillion in spending in 2013, and forecasts a $901 billion deficit.</p>
+                                                    <svg id="bubbly-deficitCircle" />
+                                                </div>
+                                                <div class="bubbly-aside">
+                                                    <p>The proposal forecasts a $901 billion deficit.</p>
+                                                </div>
+                                                <div class="bubbly-increasesLabel">
+                                                    <span>Largest Increases</span>
+                                                </div>
+                                                <div class="bubbly-decreasesLabel">
+                                                    <span>Largest Cuts</span>
+                                                </div>
+                                                <div id="bubbly-colorKey">
+                                                    <p>Circles are sized according to the proposed spending.</p>
+                                                    <div id="bubbly-sizeKey">
+                                                        <div style="left:52px;top:10px;width:20px;" class="bubbly-circleKeyLabel"><span style="left:25px;">$100 billion</span></div>
+                                                        <div style="left:32px;top:42px;" class="bubbly-circleKeyLabel"><span>$10 billion</span></div>
+                                                        <div style="left:32px;top:57px;" class="bubbly-circleKeyLabel"><span>$1 billion</span></div>
+                                                        <svg id="bubbly-scaleKey" />
+                                                    </div>
+                                                    <p>Color shows amount of cut or increase from 2012.</p>
+                                                    <ul class="bubbly-colorSwatches">
+                                                        <li class="change-decrease3"></li>
+                                                        <li class="change-decrease2"></li>
+                                                        <li class="change-decrease1"></li>
+                                                        <li class="change-increase1"></li>
+                                                        <li class="change-increase2"></li>
+                                                        <li class="change-increase3"></li>
+                                                    </ul>
+                                                    <ul class="bubbly-colorTicks">
+                                                        <li></li>
+                                                        <li></li>
+                                                        <li></li>
+                                                        <li></li>
+                                                        <li></li>
+                                                    </ul>
+                                                    <ul class="bubbly-colorLabels">
+                                                        <li>&#x2013;25%</li>
+                                                        <li>&#x2013;5%</li>
+                                                        <li>0</li>
+                                                        <li>+5%</li>
+                                                        <li>+25%</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bubbly-overlay" id="bubbly-mandatoryOverlay">
+                                                <div class="bubbly-mandatoryExplainer">
+                                                </div>
+                                                <div class="bubbly-mandatoryAside">
+                                                    <h5>Mandatory</h5>
+                                                    <p><strong style="font-size:16px;padding-bottom:4px;display:block;">$2.5 trillion</strong></p>
+                                                    <p>About 70 percent of budgetary spending is controlled by existing laws, including entitlements like Medicare, Medicaid and Social Security.</p>
+                                                </div>
+                                                <div class="bubbly-discretionaryExplainer">
+                                                </div>
+                                                <div class="bubbly-discretionaryAside">
+                                                    <h5>Discretionary</h5>
+                                                    <p><strong style="font-size:16px;padding-bottom:4px;display:block;">$1.1 trillion</strong></p>
+                                                    <p>Only about 30 percent of the budget is controlled by the annual budget process. Last August, the White House and Congress agreed to a cap on this spending.</p>
+                                                </div>
+                                            </div>
+                                            <div class="bubbly-overlay" id="bubbly-discretionaryOverlay">
+                                                <div id="bubbly-discretionaryIntro">
+                                                    <h5>Changes to Discretionary Spending</h5>
+                                                    <p>Discretionary spending is controlled by the annual budget process. The White House and Congress agreed to a cap in spending in August, so proposed increases in categories like education and energy
+                                                        require cuts in other areas.</p>
+                                                </div>
+                                            </div>
+                                            <div class="bubbly-overlay" id="bubbly-departmentOverlay">
+                                                <p class="bubbly-emptyCircleLabel">Empty circles show income.</p>
+                                            </div>
+                                            <div class="bubbly-overlay" id="bubbly-comparisonOverlay">
+                                                <h5>Comparison Overlay</h5>
+                                            </div>
+                                        </div>
+                                        <div id="bubbly-chartCanvas"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="application/javascript" src="data.js"></script>
+
+                            <script type="text/javascript">
+                                var bubbly = bubbly || {};
+                            </script>
+                            <script src="lib/d3.min.js" type="application/javascript"></script>
+
+                            <script type="application/javascript" src="lib/d3.geom.min.js"></script>
+                            <script type="application/javascript" src="lib/d3.layout.min.js"></script>
+                            <script type="application/javascript" src="lib/jquery.js"></script>
+
+                            <script type="application/javascript" src="lib/bubbly.js"></script>
+                            <script type="application/javascript" src="Chart.js"></script>
+                            <script type="application/javascript" src="ChooseList.js"></script>
+                            <script type="application/javascript" src="base.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

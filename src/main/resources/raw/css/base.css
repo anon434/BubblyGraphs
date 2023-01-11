@@ -1,0 +1,670 @@
+.bubbly {
+  font-family: Arial;
+}
+
+#bubbly-chartFrame {
+    margin: auto;
+    width: 970px;
+    height: 550px;
+    -webkit-transition: height ease-in-out 1s;
+    -moz-transition: height ease-in-out 1s;
+    -o-transition: height ease-in-out 1s;
+    -ms-transition: height ease-in-out 1s;
+}
+
+
+#bubbly-chart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#bubbly-error {
+}
+
+#bubbly-error p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px;
+    border: solid 1px #CCC;
+    background: #ffd;
+    padding: 10px;
+}
+
+#bubbly-error a {
+    text-decoration: underline;
+}
+
+#bubbly-chartCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#bubbly-chartCanvas svg {
+    height: 100%;
+    overflow: hidden;
+}
+
+#bubbly-tooltipContainer {
+    position: absolute;
+    bottom: 0;
+    width: 230px;
+    left: -125px;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(200, 200, 200, 0.85);
+    text-align: center;
+}
+
+#bubbly-tooltip {
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    display: none;
+}
+
+#bubbly-tooltip .bubbly-tail {
+    position: absolute;
+    bottom: -8px;
+    left: 105px;
+    width: 40px;
+    height: 8px;
+}
+
+#bubbly-tooltip .bubbly-department {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 10px;
+    margin-bottom: 2px;
+    color: #666;
+    text-align: center;
+}
+
+#bubbly-tooltip .bubbly-rule {
+    height: 1px;
+    margin: 1px auto 3px;
+    background: #ddd;
+    width: 130px;
+}
+
+#bubbly-tooltip .bubbly-discretion {
+    color: #666;
+    /*   text-transform:uppercase;*/
+    font-size: 11px;
+    text-align: center;
+    font-style: italic;
+}
+
+#bubbly-tooltip .bubbly-name {
+    text-align: left;
+    font-size: 13px;
+    /*  width:170px;*/
+    text-align: center;
+}
+
+#bubbly-tooltip .bubbly-value {
+    /*  position:absolute;*/
+    text-align: center;
+    right: 10px;
+    top: 28px;
+    font-size: 16px;
+    /*  width:100px;*/
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+#bubbly-tooltip .bubbly-change {
+    padding-left: 10px;
+    /*  width:110px;  */
+    font-size: 16px;
+    text-align: right;
+    overflow: hidden;
+    /*  position:absolute;*/
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    display: inline;
+}
+
+#bubbly-tooltip .bubbly-valuesContainer {
+    padding-top: 7px;
+}
+
+#bubbly-tooltip.bubbly-minus .bubbly-change {
+    color: #900;
+}
+
+#bubbly-tooltip.bubbly-plus .bubbly-change {
+    color: #090;
+}
+
+/* Navigation */
+
+.bubbly-navBar {
+    border-top: solid 1px #DDD;
+    padding: 15px 0 0;
+    margin: 0 10px;
+    z-index: 100;
+    position: absolute;
+    width: 950px;
+}
+
+
+.bubbly-navigation {
+}
+
+.bubbly-navigation li {
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+    float: left;
+    padding: 10px 18px;
+    border-top: solid 1px #CCC;
+    border-bottom: solid 1px #CCC;
+    border-left: solid 1px #CCC;
+    background: #f9f9f9;
+    margin: 0 0;
+}
+
+.bubbly-navigation li:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+.bubbly-navigation li:last-of-type {
+
+    border-right: solid 1px #CCC;
+    border-radius: 0 4px 4px 0;
+}
+
+.bubbly-navigation li.selected {
+    color: #000;
+    background: #e9e9e9;
+    border-color: #AAA;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*Category List*/
+
+#bubbly-categoryBrowser li {
+    cursor: pointer;
+    background-image: none;
+    background-color: unset;
+    border-bottom: solid 1px #f0f0f0;
+    padding: 3px;
+    margin: 0 0 1px 0;
+}
+
+#bubbly-categoryBrowser li:hover {
+    background-color: #f3f3f3;
+}
+
+/* Scoop Fixes */
+
+span.noWrap.feedback {
+    white-space: normal;
+}
+
+#interactiveFooter {
+    border-top: 1px solid #DDDDDD;
+
+    margin-top: 10px;
+    padding-top: 12px !important;
+}
+
+div.storyHeader h1 {
+    font-size: 26px !important;
+    margin-bottom: 4px !important;
+    margin-top: 3px !important;
+}
+
+.ledeStory div.storySummary .summary {
+    line-height: 25px;
+    font-size: 15px;
+    /*  display: none;*/
+}
+
+.ledeStory .insetHFullWidth .storyHeader .dateline {
+    line-height: 2.4em;
+    margin-bottom: 3px;
+    margin-top: 0px;
+}
+
+.insetHFullWidth #articleToolsTop {
+    margin-bottom: 0;
+    margin-top: 0px;
+}
+
+/********************************
+** FILE: overlays.css
+********************************/
+/*Overlays*/
+
+#bubbly-overlays {
+    position: absolute;
+    z-index: 40;
+}
+
+.bubbly-overlay {
+    position: absolute;
+    display: none;
+    color: #666;
+}
+
+.bubbly-overlay h5 {
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 7px;
+}
+
+.bubbly-overlay p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.45em;
+}
+
+.bubbly-overlaySVG {
+    width: 970px;
+    height: 850px;
+    position: absolute;
+    z-index: 0;
+}
+
+/*Start*/
+
+.bubbly-overview {
+    position: absolute;
+    width: 275px;
+    top: 100px;
+    left: 10px;
+}
+
+.bubbly-overview p {
+    font-size: 13px;
+}
+
+.bubbly-aside {
+    position: absolute;
+    width: 125px;
+    left: 775px;
+    top: 266px;
+    text-align: center;
+}
+
+.bubbly-increasesLabel {
+    position: absolute;
+    top: 100px;
+    left: 540px;
+    width: 60px;
+    border-top: dashed 1px rgba(0, 0, 0, 0.2);
+}
+
+.bubbly-increasesLabel span {
+    position: absolute;
+    right: -105px;
+    top: -10px;
+    width: 100px;
+}
+
+.bubbly-decreasesLabel {
+    position: absolute;
+    top: 470px;
+    left: 560px;
+    width: 60px;
+    border-top: dashed 1px rgba(0, 0, 0, 0.2);
+}
+
+.bubbly-decreasesLabel span {
+    position: absolute;
+    right: -105px;
+    top: -10px;
+    width: 100px;
+}
+
+
+#bubbly-deficitCircle {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 60px;
+    left: 700px;
+}
+
+.bubbly-deficitCircle {
+    stroke-width: 1;
+    stroke: #999;
+    stroke-dasharray: 4 4;
+    fill: none;
+}
+
+
+#bubbly-colorKey {
+    position: absolute;
+    top: 210px;
+    left: 10px;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#bubbly-sizeKey {
+    position: relative;
+    height: 110px;
+    width: 200px;
+}
+
+#bubbly-scaleKey {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bubbly-circleKeyLabel {
+    position: absolute;
+    border-top: solid 1px #DDD;
+    width: 40px;
+}
+
+#bubbly-sizeKey .bubbly-circleKeyLabel span {
+    font-size: 10px;
+    color: #999;
+    position: absolute;
+    display: block;
+    left: 45px;
+    top: -8px;
+    width: 80px;
+    z-index: 100;
+}
+
+.bubbly-scaleKeyCircle {
+    stroke-width: 1;
+    stroke: #999;
+    stroke-dasharray: 2 2;
+    fill: none;
+}
+
+#bubbly-colorKey ul {
+    margin: 0;
+    padding: 0;
+}
+
+#bubbly-colorKey p {
+    margin-bottom: 8px;
+}
+
+#bubbly-colorKey li {
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+    display: block;
+    height: 100%;
+}
+
+.bubbly-colorSwatches {
+    width: 100%;
+    height: 10px;
+}
+
+.bubbly-colorSwatches li {
+    width: 16%;
+    border-right: solid white 1px;
+}
+
+.bubbly-colorTicks {
+    height: 6px;
+}
+
+.bubbly-colorTicks li {
+    width: 16%;
+    border-right: solid #CCC 1px;
+}
+
+.bubbly-colorLabels {
+    margin-top: 3px;
+    height: 20px;
+    position: relative;
+    left: 8%;
+}
+
+.bubbly-colorLabels li {
+    width: 16%;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1em;
+    padding: 4px 0 0 0 !important;
+    margin: 0;
+}
+
+/*Mandatory*/
+
+#bubbly-mandatoryOverlay {
+}
+
+.bubbly-discretionaryExplainer {
+    text-align: center;
+    left: 550px;
+    top: 100px;
+    position: absolute;
+    width: 340px;
+}
+
+
+.bubbly-mandatoryExplainer {
+    text-align: center;
+    left: 150px;
+    top: 80px;
+    position: absolute;
+    width: 340px;
+}
+
+.bubbly-discretionaryAside {
+    position: absolute;
+    left: 800px;
+    top: 120px;
+    width: 130px;
+}
+
+.bubbly-mandatoryAside {
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    width: 140px;
+}
+
+/*By Change*/
+
+#bubbly-discretionaryIntro {
+    top: 80px;
+    left: 10px;
+    width: 500px;
+    position: absolute;
+}
+
+.bubbly-discretionaryTickLabel {
+    width: 200px;
+    position: absolute;
+    left: 10px;
+}
+
+.bubbly-discretionaryTickLabel p {
+    position: relative;
+    top: -6px;
+    font-size: 10px;
+}
+
+.bubbly-discretionaryTick {
+    position: absolute;
+    border-top: dashed 1px #CCC;
+    left: 60px;
+    width: 900px;
+}
+
+.bubbly-discretionaryTick p {
+    font-size: 10px;
+    text-align: left;
+    position: absolute;
+    left: -50px;
+    width: 40px;
+    top: -8px;
+}
+
+.bubbly-discretionaryZeroTick {
+    border-top: solid 1px #AAA;
+    left: 10px;
+    width: 950px;
+}
+
+/*Department*/
+
+.bubbly-departmentAnnotation {
+    position: absolute;
+    z-index: 1000;
+}
+
+.bubbly-departmentAnnotation p {
+    font-size: 12px;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.bubbly-departmentAnnotation p.total {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    color: #000;
+}
+
+.bubbly-departmentAnnotation p.total {
+    font-weight: bold;
+}
+
+.bubbly-departmentAnnotation.bubbly-row0 p {
+    font-size: 14px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row0 p.total {
+    font-size: 16px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row1 p {
+    font-size: 11px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row1 p.total {
+    font-size: 13px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row2 p {
+    font-size: 10px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row2 p.total {
+    font-size: 12px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row3 p {
+    font-size: 10px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row3 p.total {
+    font-size: 12px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row4 p {
+    font-size: 10px;
+}
+
+.bubbly-departmentAnnotation.bubbly-row4 p.total {
+    font-size: 12px;
+}
+
+/*Department*/
+
+#bubbly-departmentOverlay p.bubbly-emptyCircleLabel {
+    position: absolute;
+    left: 125px;
+    top: 280px;
+    width: 80px;
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    line-height: 1.45em;
+    font-style: italic;
+}
+
+/********************************
+** FILE: color_key.css
+********************************/
+
+.change-decrease3 {
+    background-color: #d84b2a;
+}
+
+.change-decrease2 {
+    background-color: #ee9586;
+}
+
+.change-decrease1 {
+    background-color: #e4b7b2;
+}
+
+.change-same {
+    background-color: #CCC;
+}
+
+.change-increase1 {
+    background-color: #beccae;
+}
+
+.change-increase2 {
+    background-color: #9caf84;
+}
+
+.change-increase3 {
+    background-color: #7aa25c;
+}
+
+/*text color for changes*/
+
+.change-decrease3 span.label {
+    color: #eeb0a2;
+}
+
+.change-decrease2 span.label {
+    color: #f8d0ca;
+}
+
+.change-decrease1 span.label {
+    color: #f3dfdd;
+}
+
+.change-same span.label {
+    color: #FFFFFF;
+}
+
+.change-increase1 span.label {
+    color: #e2e8db;
+}
+
+.change-increase2 span.label {
+    color: #d3dbc9;
+}
+
+.change-increase3 span.label {
+    color: #c5d6b7;
+}
