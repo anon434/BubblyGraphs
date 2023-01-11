@@ -1,7 +1,3 @@
-/********************************
- ** FILE: ChooseList.js
- ********************************/
-
 var bubbly = bubbly || {};
 var $j = jQuery;
 
@@ -30,14 +26,13 @@ bubbly.ChooseList.prototype.selectByElement = function (el) {
     if (this.selectedNode) {
         $j(this.selectedNode).removeClass("selected");
     }
-    ;
     $j(el).addClass("selected");
-    for (var i = 0; i < this.elements.length; i++) {
+    for (let i = 0; i < this.elements.length; i++) {
         if (this.elements[i] === el) {
             this.currentIndex = i;
         }
     }
-    ;
+
     this.selectedNode = el;
     this.onChange(this);
 };

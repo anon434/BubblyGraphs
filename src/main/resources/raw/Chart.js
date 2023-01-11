@@ -1,7 +1,3 @@
-/********************************
- ** FILE: Chart.js
- ********************************/
-
 var bubbly = bubbly || {};
 
 bubbly.Chart = function () {
