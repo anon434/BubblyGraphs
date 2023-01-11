@@ -1,5 +1,4 @@
-    var bubbly = bubbly || {};
-    bubbly.budget_array_data = [{
+bubbly.budget_array_data = [{
     "name": "Benefits Programs",
     "positions": {
     "total": {
