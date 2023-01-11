@@ -1,7 +1,3 @@
-/********************************
- ** FILE: lib/bubbly.js
- ********************************/
-
 var bubbly = bubbly || {};
 
 bubbly.formatNumber = function (n, decimals) {
@@ -14,7 +10,6 @@ bubbly.formatNumber = function (n, decimals) {
         negativeSuffix = " in income"
         n = -n
     }
-    ;
 
     if (n >= 1000000000000) {
         suffix = " trillion"
@@ -36,7 +31,7 @@ bubbly.formatNumber = function (n, decimals) {
         if (n < 1) {
             prefix = "0"
         }
-        ;
+
         s = String(Math.round(n * (Math.pow(10, decimals))));
         if (s < 10) {
             remainder = "0" + s.substr(s.length - (decimals), decimals);
